@@ -168,12 +168,12 @@ if (!$token){
 }
 
 New-Variable -name deviceid -value $(get-deviceid $token) -Force -ErrorAction SilentlyContinue -Scope global
-
-#main
-
-#show-devices
-#show-currentdevice
-#change-state -off
-#change-state -on
-#chage-state -device "plug 1" -on
-#change-state -device "plug 1" -off
+clear-host
+write-output "Example commands:"
+write-output '>show-currentdevice'
+write-output '>change-state -off'
+write-output '>change-state -on'
+write-output '>show-devices'
+write-output '>chage-state -device "<insert_device_name>" -on'
+write-output '>change-state -device "<insert_device_name>" -off'
+Write-Output ""
