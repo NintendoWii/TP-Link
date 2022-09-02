@@ -4,8 +4,11 @@ function get-username{
 }
 
 function get-password{
-    $password= Read-Host -Prompt " "
-    return $password
+    $creds= Get-Credential -UserName $username -Message "Enter Password"
+    $SecurePassword= $creds.Password
+    $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
+    $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+    return $unsecurepassword
 }
 
 function generate-uuid{
@@ -43,7 +46,7 @@ $body = @"
  "params": {
  "appType": "Kasa_Android",
  "cloudUserName": "$username",
- "cloudPassword": "$password",
+ "cloudPassword": "$Password",
  "terminalUUID": "$uuid"
  }
 }
