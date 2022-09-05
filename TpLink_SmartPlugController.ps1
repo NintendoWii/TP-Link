@@ -211,7 +211,7 @@ while ($true){
         write-output '>change-state -off'
         write-output '>change-state -on'
         write-output '>show-devices'
-        write-output '>chage-state -device "<insert_device_name>" -on'
+        write-output '>change-state -device "<insert_device_name>" -on'
         write-output '>change-state -device "<insert_device_name>" -off'
         write-output ""
         pause
