@@ -205,7 +205,7 @@ while ($true){
     }
     if ($choice -eq 4){
         clear-host
-        write-output "You've quit interactive mode, but can still control the devices form this PowerShell window."
+        write-output "You've quit interactive mode, but can still control the devices from this PowerShell window."
         write-output "Example commands:"
         write-output '>show-currentdevice'
         write-output '>change-state -off'
