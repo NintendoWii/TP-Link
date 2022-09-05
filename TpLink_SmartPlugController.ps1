@@ -1,4 +1,4 @@
-﻿<#
+<#
 This script controls the ON/OFF Function of TPLINK Smart Plugs VIA crafted http POST Requests
 Initial POST Authenticates with UUID, username and password
 The distant server will then generate and return a token
@@ -127,12 +127,10 @@ function change-state([string]$device,[switch]$on, [switch]$off){
     
     if ($off){
         $bin= "0"
-        new-variable -name state -Value "off" -Scope global
     }
 
     if ($on){
         $bin= "1"
-        new-variable -name state -Value "on" -Scope global
     }
 
     if ($on -and $off){
