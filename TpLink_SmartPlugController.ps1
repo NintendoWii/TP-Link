@@ -66,7 +66,7 @@ $body = @"
     $invalid= $wr | select-string "Incorrect email or password"
     
     if ($invalid){
-        Cclear-host
+        clear-host
         write-host "Login Failure. Check your username and password and try again."
         pause
         get-token
